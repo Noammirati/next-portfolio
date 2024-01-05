@@ -1,14 +1,13 @@
 .navbar {
     padding: 1rem 0 1rem 1rem;
-    border-bottom: 3px solid #000;
 }
 
 .active {
-    color: green;
+    color: var(--color-primary);
 }
 
 .navlink:hover {
-    color: blue;
+    color: var(--color-secondary-700);
 }
 
 .navlink a {
@@ -18,15 +17,11 @@
 .navlink:not(:last-of-type)::after {
     content: ",";
     padding-right: 0.25rem;
-    color: #000;
+    color: var(--color-txt);
 }
 
 .toggle {
     display: none;
-}
-
-.underbar {
-    display: block;
 }
 
 @media (max-width: 35em) {
@@ -54,10 +49,6 @@
 
         transform: translateX(100%);
         transition: transform 350ms ease-in;
-    }
-
-    .underbar {
-        display: none;
     }
 
     .show {

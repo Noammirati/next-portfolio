@@ -1,17 +1,23 @@
 import Image from 'next/image';
+import Link from 'next/link';
 import styles from './projects.module.css';
 
 export default function Card({ name, srcPicture, introduction }:
     { name: string, srcPicture: string, introduction: string }) {
     return (
-        <div className={`ui-projects-Card ${styles.card}`}>
+        <Link href="#" className={`ui-projects-Card ${styles.card}`}>
             <Image
                 src={srcPicture}
-                width='200' 
-                height='200'
-                alt={`illustration du projet ${name}`} />
-            <h2>{name}</h2>
-            <p>{introduction}</p>
-        </div>
+                sizes="(min-width: 768px) 80px, 60px"
+                layout='responsive'
+                width={300}
+                height={300}
+                alt={`illustration du projet ${name}`}
+                className={styles.card__img} />
+            <span className={styles.card__footer}>
+                <span>{name}</span>
+                <p>{introduction}</p>
+            </span>
+        </Link>
     )
 }
