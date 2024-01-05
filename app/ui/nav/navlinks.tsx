@@ -10,39 +10,30 @@ const links = [
     {
         name: 'accueil',
         href: '/',
-        //icon: HomeIcon 
     },
     {
         name: 'projets',
         href: '/projects',
-        //icon: HomeIcon 
-    },
-    {
-        name: 'à propos',
-        href: '/about',
-        //icon: HomeIcon 
     },
     {
         name: 'contact',
         href: '/contact',
-        //icon: DocumentDuplicateIcon,
     },
 ];
 
 
-export default function Navlinks() {
+export default function Navlinks({ customHandleClick }: { customHandleClick: () => void }) {
     const pathname = usePathname();
     return (
         <>
             {links.map((link) => {
-                const active = styles.active;
                 return (
                     <li key={link.name} className={clsx(
                         `ui-Navlinks ${styles.navlink} ${oswald.className}`,
                         { [styles.active]: pathname === link.href },
                     )}>
                         <Link href={link.href}>
-                            {link.name}
+                            <span onClick={customHandleClick}>{link.name}</span>
                         </Link >
                     </li>
                 );

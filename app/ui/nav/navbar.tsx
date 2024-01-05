@@ -4,10 +4,12 @@ import Navlinks from "./navlinks";
 import styles from "./nav.module.css";
 import clsx from "clsx";
 import { useState } from 'react';
+import Image from "next/image";
 import { SVGBurger, SVGCross } from "@/app/icons";
 
 export default function Navbar() {
     const [show, setShow] = useState(false);
+    const hide = () => { setShow(false) }
     return (
         <>
             <button
@@ -19,10 +21,10 @@ export default function Navbar() {
                 <span>{show ? <SVGCross /> : <SVGBurger />}</span>
             </button>
             <ul id="nav" className={clsx(
-                `ui-Navbar ${styles.navbar} flex justify-end`,
+                `${styles.navbar} flex justify-end`,
                 { [styles.show]: show }
             )}>
-                <Navlinks />
+                <Navlinks customHandleClick={hide}/>
             </ul>
         </>
     );
