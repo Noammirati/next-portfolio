@@ -1,0 +1,70 @@
+.navbar {
+    padding: 1rem 0 1rem 1rem;
+    border-bottom: 3px solid #000;
+}
+
+.active {
+    color: green;
+}
+
+.navlink:hover {
+    color: blue;
+}
+
+.navlink a {
+    color: inherit;
+}
+
+.navlink:not(:last-of-type)::after {
+    content: ",";
+    padding-right: 0.25rem;
+    color: #000;
+}
+
+.toggle {
+    display: none;
+}
+
+.underbar {
+    display: block;
+}
+
+@media (max-width: 35em) {
+    .toggle {
+        display: block;
+        position: absolute;
+        top: 2rem;
+        right: 2rem;
+        width: 2rem;
+        aspect-ratio: 1/1;
+        z-index: 9999;
+    }
+
+    .navbar {
+        flex-direction: column;
+        align-items: flex-end;
+        position: absolute;
+        top: 0;
+        right: 0;
+        gap: 3rem;
+        font-size: 28px;
+        padding: 3rem;
+        height: 100%;
+        width: 100%;
+
+        transform: translateX(100%);
+        transition: transform 350ms ease-in;
+    }
+
+    .underbar {
+        display: none;
+    }
+
+    .show {
+        transform: translateX(0%);
+    }
+
+    .navlink::after {
+        display: none;
+    }
+}
