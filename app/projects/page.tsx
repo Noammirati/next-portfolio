@@ -3,33 +3,33 @@ import styles from '@/ui/projects/projects.module.css';
 
 const projects = [
     {
-        title: 'Prout',
-        img: 'https://picsum.photos/200',
+        title: 'Projet',
+        img: 'https://picsum.photos/300',
         intro: 'A random project'
 
     }, {
-        title: 'Prout',
-        img: 'https://picsum.photos/200',
+        title: 'Projet',
+        img: 'https://picsum.photos/400',
         intro: 'A random project'
     }, {
-        title: 'Prout',
-        img: 'https://picsum.photos/200',
+        title: 'Projet',
+        img: 'https://picsum.photos/500',
         intro: 'A random project'
     }, {
-        title: 'Prout',
-        img: 'https://picsum.photos/200',
+        title: 'Projet',
+        img: 'https://picsum.photos/600',
         intro: 'A random project'
     }, {
-        title: 'Prout',
-        img: 'https://picsum.photos/200',
+        title: 'Projet',
+        img: 'https://picsum.photos/700',
         intro: 'A random project'
     }, {
-        title: 'Prout',
-        img: 'https://picsum.photos/200',
+        title: 'Projet',
+        img: 'https://picsum.photos/800',
         intro: 'A random project'
     }, {
-        title: 'Prout',
-        img: 'https://picsum.photos/200',
+        title: 'Projet',
+        img: 'https://picsum.photos/900',
         intro: 'A random project'
     },
 ]
@@ -37,11 +37,11 @@ const projects = [
 export default function Page() {
     return (
         <>
-            <h1>Projets</h1>
+            <h1 className='title'>Projets</h1>
             <div className={styles.container}>
                 {projects.map((p) => {
                     return (
-                        <Card name={p.title} srcPicture={p.img} introduction={p.intro}/>
+                        <Card key={p.title} name={p.title} srcPicture={p.img} introduction={p.intro}/>
                     );
                 })}
             </div>
