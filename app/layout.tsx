@@ -20,7 +20,6 @@ export default function RootLayout({
                             alt='Noa Ammirati'
                         />
                     </Link>
-                    <Navbar />
                 </header>
                 {children}
             </body>
